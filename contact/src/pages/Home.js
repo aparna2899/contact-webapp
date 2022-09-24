@@ -1,4 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
+import { Link } from 'react-router-dom';
 import data from '../data.json';
 
 export default function Home() {
@@ -10,16 +11,23 @@ export default function Home() {
             key={person.firstName}
             className="bg-slate-100/80 col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-md cursor-pointer"
           >
-            <div className="flex flex-1 flex-col p-4">
-              <img
-                className="mx-auto h-24 w-24 flex-shrink-0 rounded-full object-cover"
-                src={person.image}
-                alt=""
-              />
-              <h3 className="mt-6 text-lg font-medium text-gray-900">
-                {`${person.firstName} ${person.lastName}`}
-              </h3>
-            </div>
+            <Link
+              to={{
+                pathname: '/contact',
+                state: person,
+              }}
+            >
+              <div className="flex flex-1 flex-col p-4">
+                <img
+                  className="mx-auto h-24 w-24 flex-shrink-0 rounded-full object-cover"
+                  src={person.image}
+                  alt=""
+                />
+                <h3 className="mt-6 text-lg font-medium text-gray-900">
+                  {`${person.firstName} ${person.lastName}`}
+                </h3>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
