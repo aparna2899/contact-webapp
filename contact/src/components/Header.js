@@ -4,8 +4,8 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
+  { name: 'Contacts', href: '#', current: true },
+  { name: 'Messages', href: '#', current: false },
 ];
 
 function classNames(...classes) {
