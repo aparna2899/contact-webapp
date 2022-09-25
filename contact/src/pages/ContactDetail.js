@@ -1,4 +1,4 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
+import { EnvelopeIcon } from '@heroicons/react/20/solid';
 import { Link } from 'react-router-dom';
 
 export default function Example(props) {

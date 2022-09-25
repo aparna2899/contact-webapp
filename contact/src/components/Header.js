@@ -1,11 +1,9 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Contacts', href: '/', current: true },
-  { name: 'Messages', href: '#', current: false },
+  { name: 'Contacts', href: '/' },
+  { name: 'Messages', href: '/messagelist'},
 ];
 
 function classNames(...classes) {

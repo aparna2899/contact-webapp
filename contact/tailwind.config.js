@@ -4,9 +4,11 @@ module.exports = {
     './src/components/Header.js',
     './src/pages/Home.js',
     './src/pages/ContactDetail.js',
+    './src/pages/Message.js',
+    './src/pages/MessageDetail.js',
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
