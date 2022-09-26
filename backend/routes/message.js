@@ -7,8 +7,8 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const testToken = process.env.TEST_AUTH_TOKEN;
 const testSid = process.env.TEST_ACCOUNT_SID;
 
-const client = require('twilio')(testSid, testToken);
-// const client = require('twilio')(accountSid, authToken);
+// const client = require('twilio')(testSid, testToken);
+const client = require('twilio')(accountSid, authToken);
 
 router.post('/', (req, res, next) => {
   client.messages
