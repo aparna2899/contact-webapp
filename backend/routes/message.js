@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 require('dotenv').config();
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const testToken = process.env.TEST_AUTH_TOKEN;
-const testSid = process.env.TEST_ACCOUNT_SID;
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const testToken = process.env.TEST_AUTH_TOKEN;
+// const testSid = process.env.TEST_ACCOUNT_SID;
 
 // const client = require('twilio')(testSid, testToken);
-const client = require('twilio')(accountSid, authToken);
+const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 router.post('/', (req, res, next) => {
   client.messages
