@@ -6,10 +6,12 @@ var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
 
+
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/users');
+var messageRouter = require('./routes/message');
 
-mongoose.connect('mongodb://127.0.0.1:27017/contact-app', (err) => {
+mongoose.connect('mongodb+srv://message-web-app:message@cluster0.8nqvbco.mongodb.net/?retryWrites=true&w=majority', (err) => {
   console.log(err ? err : 'Connected to Database');
 });
 
@@ -28,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
+app.use('/message', messageRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
