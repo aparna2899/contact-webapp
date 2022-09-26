@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var http = require('http');
+
 
 
 var indexRouter = require('./routes/index');
@@ -16,6 +18,9 @@ mongoose.connect('mongodb+srv://message-web-app:message@cluster0.8nqvbco.mongodb
 });
 
 var app = express();
+
+var server = http.createServer(app);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,4 +53,8 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+server.listen(process.env.PORT,()=>{
+  console.log(`server is listening on port ${process.env.PORT}`)
+})
+// module.exports = app;
